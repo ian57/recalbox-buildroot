@@ -4,6 +4,7 @@
 #
 
 systemsetting="python /usr/lib/python2.7/site-packages/configgen/settings/recalboxSettings.pyc"
+btTar=/recalbox/share/system/bluetooth/bluetooth.tar
 
 case "$1" in
   start)
@@ -17,6 +18,7 @@ case "$1" in
   stop)
 	start-stop-daemon -K -q -p /var/run/btDaemon.pid
 	start-stop-daemon -K -q -p /var/run/bluetoothd.pid
+	rm "$btTar" ; tar cvf "$btTar" /var/lib/bluetooth/
 	;;
   restart|reload)
         "$0" stop

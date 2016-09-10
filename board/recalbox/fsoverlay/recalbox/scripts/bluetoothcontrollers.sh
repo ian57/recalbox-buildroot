@@ -7,5 +7,6 @@ if [ -f /boot/bcm2710-rpi-3-b.dtb ] && [ $btPi3Running -ne 0 ]; then
 fi
 
 /usr/bin/hciconfig hci0 up piscan
+/usr/bin/hciconfig hci0 name Recalbox
 exit 0
 

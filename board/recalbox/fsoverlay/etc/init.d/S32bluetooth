@@ -20,7 +20,7 @@ case "$1" in
   stop)
 	start-stop-daemon -K -q -p /var/run/btDaemon.pid
 	start-stop-daemon -K -q -p /var/run/bluetoothd.pid
-	rm "$btTar" ; tar cvf "$btTar" /var/lib/bluetooth/
+	rm "$btTar" ; tar cvf "$btTar" /var/lib/bluetooth/ > /dev/null
 	;;
   restart|reload)
         "$0" stop

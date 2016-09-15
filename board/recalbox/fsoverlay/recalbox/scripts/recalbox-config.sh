@@ -389,6 +389,7 @@ if [[ "$command" == "hiddpair" ]]; then
 	name="$extra1"
 	mac1="$mode"
 	mac=`echo $mac1 | grep -oEi "([0-9A-F]{2}[:-]){5}([0-9A-F]{2})" | tr '[:lower:]' '[:upper:]'`
+	macLowerCase=`echo $mac | tr '[:upper:]' '[:lower:]'`
 	if [ "$?" != "0" ]; then 
 		exit 1
 	fi
@@ -399,7 +400,7 @@ if [[ "$command" == "hiddpair" ]]; then
                 cat "/run/udev/rules.d/99-8bitdo.rules" | grep "$mac" >> /dev/null
                 if [ "$?" != "0" ]; then
                         echo "adding rule for $mac" >> $log
-                        echo "SUBSYSTEM==\"input\", ATTRS{uniq}==\"$mac\", MODE=\"0666\", ENV{ID_INPUT_JOYSTICK}=\"1\"" >> "/run/udev/rules.d/99-8bitdo.rules"
+                        echo "SUBSYSTEM==\"input\", ATTRS{uniq}==\"$macLowerCase\", MODE=\"0666\", ENV{ID_INPUT_JOYSTICK}=\"1\"" >> "/run/udev/rules.d/99-8bitdo.rules"
                 fi
         fi
         /recalbox/scripts/bluetooth/test-device connect "$mac"

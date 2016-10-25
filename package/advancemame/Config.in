@@ -1,0 +1,7 @@
+config BR2_PACKAGE_ADVANCEMAME
+    bool "advancemame"
+    help
+		The Advance Projects allow you to play Arcade games with video hardware like TVs, Arcade monitors, PC monitors and LCD screens. They run in GNU/Linux, Mac OS X, DOS and Windows.
+
+		http://www.advancemame.it/, https://github.com/amadvance/advancemame
+

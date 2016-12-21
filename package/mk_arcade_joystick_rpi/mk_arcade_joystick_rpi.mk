@@ -5,10 +5,9 @@
 ################################################################################
 ifeq ($(BR2_PACKAGE_MK_ARCADE_JOYSTICK_RPI_HOTKEY),y)
 	#MK_ARCADE_JOYSTICK_RPI_VERSION = v0.1.5-hotkey
-	MK_ARCADE_JOYSTICK_RPI_VERSION = master
+	MK_ARCADE_JOYSTICK_RPI_VERSION = hotkeybtn
 else
-	#MK_ARCADE_JOYSTICK_RPI_VERSION = v0.1.5
-	MK_ARCADE_JOYSTICK_RPI_VERSION = master
+	MK_ARCADE_JOYSTICK_RPI_VERSION = v0.1.5
 endif	
 MK_ARCADE_JOYSTICK_RPI_SITE = $(call github,recalbox,mk_arcade_joystick_rpi,$(MK_ARCADE_JOYSTICK_RPI_VERSION))
 MK_ARCADE_JOYSTICK_RPI_DEPENDENCIES = linux
